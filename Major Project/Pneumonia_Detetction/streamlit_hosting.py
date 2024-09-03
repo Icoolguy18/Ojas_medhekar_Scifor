@@ -1,11 +1,15 @@
 import numpy as np
 import streamlit as st
 import tensorflow as tf
-from keras.models import load_model
+import keras
+from tensorflow.keras.models import load_model
 from keras.preprocessing.image import load_img, img_to_array
+import pickle
 
-model = load_model(r"C:\Users\ojas2\Downloads\model2.h5")
+#with open(r"C:\Users\ojas2\Downloads\model.pkl", 'rb') as f:
+#    model_pkl = pickle.load(f)
 
+model = load_model('C:\\Users\\ojas2\OneDrive\\Desktop\TUF\\b.tech\data sciences\\Scifor\\model2.h5')
 def test_image(path):
     image = load_img(path, target_size=(150, 150))
     image = img_to_array(image)
